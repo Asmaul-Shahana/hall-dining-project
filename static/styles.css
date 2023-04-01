@@ -1,0 +1,37 @@
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+#wrapper{
+padding-left: 100px;
+padding-top: 80px;
+height: 30%;
+width: 600px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+p{
+    font-color: #5F6F94;
+    font-family: Bahnschrift;
+    font-size: 16px;
+    word-spacing: 3px;
+}
+marquee {
+    font-size: large;
+  }
+hr.notice {
+    border-top: 2px solid black;
+    margin: 0.75em;
+}
+h3{
+padding: 30px;
+}
+footer{
+background-color: #2C3639;
+}
+.service{
+position: relative;
+padding-right: 100px;
+top: -380px;
+}

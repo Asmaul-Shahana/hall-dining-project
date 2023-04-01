@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Book Coupon</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+<style>
+  body {
+    font-family: Arial;
+  }
+
+  .coupon {
+    border: 5px dotted #bbb;
+    width: 80%;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .coupon-container {
+    padding: 5px 16px;
+    background-color: #f1f1f1;
+  }
+
+  .promo {
+    background: #ccc;
+    padding: 3px;
+  }
+
+  .expire {
+    color: red;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="d-flex flex-column align-items-center gap-5">
+    <div class="coupon">
+      <div class="d-flex justify-content-between coupon-container">
+        <h3>Eat<span style="color:#8bc34a">&</span>Chill</h3>
+        <img src="{% static 'image/dinn.png' %}" alt="icon"
+                        style="width: 50px; height: 50px; margin: 7px;"> 
+      </div>
+      <div class="coupon-container" style="background-color:white">
+        <h2><b>DINING COUPON</b></h2>
+        <p>Provide this coupon to the meal distrbutor in the dining. This coupon is only valid till the day of the meal and cannot be used after it is punched. All meal items are available using this coupon.</p>
+      </div>
+      <div class="coupon-container">
+        <div class="d-flex justify-content-between">
+          <h4>Coupon No: <span class="promo">BOH<span id="pin"></span></h4></span>
+          <h4 class="expire">Expires: {{bookingobj.date}}</h4>
+        </div>
+  
+        {% if bookingobj %}
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4>Student ID: {{bookingobj.st_id}}</h4>
+            <h4>Name: {{bookingobj.name}}</h4>
+            <h4>Email: {{bookingobj.email}}</h4>
+          </div>
+          <div>
+            <h4>Guests: {{bookingobj.guests}}</h4>
+            <h4>Meal: {{bookingobj.meal}}</h4>
+            <h4>Payment: {{bookingobj.payment_method}}</h4>
+          </div>
+        </div>
+        {% else %}
+        <h2>Empty database</h2>
+        {% endif %}
+      </div>
+    </div>
+    <a href="/home"><button type="button" class="btn btn-secondary">Download Coupon</button></a>
+  
+  </div>
+  <!-- Scripts -->
+  <script>
+    function getPin() {
+      const pin = generatePin();
+      const pinString = pin + '';
+      if (pinString.length === 4)
+        return pin;
+      else {
+        return getPin();
+      }
+    }
+    function generatePin() {
+      const random = Math.round(Math.random() * 10000);
+      return random;
+    }
+    const code = document.getElementById('pin');
+    code.innerText = getPin();
+  </script>
+
+
+</body>
+
+</html>

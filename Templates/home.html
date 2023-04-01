@@ -1,0 +1,431 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="" width=device-width, inital-scale="1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>Eat&Chill</title>
+    <style>
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+        #wrapper{
+            padding-left: 100px;
+            padding-top: 80px;
+            height: 30%;
+            width: 600px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        p{
+            /* color: #5F6F94; */
+            font-family: Bahnschrift;
+            font-size: 16px;
+            word-spacing: 3px;
+        }
+        marquee {
+            font-size: large;
+
+        }
+        hr.notice {
+            border-top: 2px solid black;
+            margin: 1em;
+        }
+        h3{
+            padding: 30px;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+
+        /* Clear floats after image containers */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 33.33%;
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-family: 'Abel';
+            font-size: 36px;
+            color: white;
+        }
+        .navbar {
+            margin-bottom: 0px !important;
+        }
+
+        footer{
+            background-color: #2C3639;
+        }
+        .service{
+            position: relative;
+            padding-right: 100px;
+            top: -380px;
+        }
+
+
+        /* -----------New Updates Here------------- */
+
+        body {
+            background-color: #81BD3A;
+        }
+        .carousel-caption {
+            bottom: 50px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        .carousel-item::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #000;
+            opacity: 0.7;
+        }
+        .slider-btn{
+            margin-top: 20px;
+        }
+        .slider-btn .btn {
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50px;
+            padding: 1.5rem 2rem;
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        .slider-btn .btn:hover {
+            color: #ff7a59;
+            border: #ff7a59 solid 1px;
+            background:#fff;
+        }
+
+        /* Card */
+        .notcard {
+            padding-top: 20px;
+            padding-bottom: 35px;
+            padding-left: 0;
+            padding-right: 0;
+            color: #1b1b1b;
+        }
+
+        .card-title {
+            color: #2d2d2d;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 13px;
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #fff;
+            width: 100%;
+            border-bottom: 4px solid #8bc34a;
+        }
+        .card-img {
+            position: relative;
+            max-height: 60%;
+            overflow: hidden;
+        }
+        .card-content {
+            padding: 13px;
+            border-radius: 0 0 2px 2px;
+            max-height: 100%;
+        }
+        .card-content p {
+            overflow: hidden;
+            font-size: 16px;
+        }
+        .card.medium {
+            position: relative;
+        }
+        /* Card end */
+        /*         About Us wrting         */
+        section.section-padding.gray-bg {
+            padding: 60px;
+            color: black;
+            background: #F7F7F7;
+        }
+        /* Footer */
+        .footerlink {
+            color: white;
+        }
+        .footerlink:hover {
+            color: #56ab2f;
+        }
+        /* New updates ends here */
+    </style>
+
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+            <a class="navbar-brand" href="/home">Eat<span style="font-family: 'Lucida Calligraphy'; color: #81BD3A">&</span>Chill</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home"><span class="glyphicon glyphicon-home"></span> Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/home/Breakfast">Breakfast</a></li>
+                        <li><a class="dropdown-item" href="/home/Lunch">Lunch</a></li>
+                        <li><a class="dropdown-item" href="/home/Snacks">Snacks</a></li>
+                        <li><a class="dropdown-item" href="/home/Dinner">Dinner</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/events">Upcoming Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/notice">Notice</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/about">About</a>
+                </li>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/home/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/home/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="/home/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+{% load static %}
+<div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img style="width: 100%; height:70vh" src="{% static 'image/img11.png' %}" class="d-block w-100" alt="Loading....">
+            <div class="carousel-caption d-none d-md-block">
+                <h4 style="font-family: 'Verdana'; font-size: 46px; font-weight: 600;">HAPPY DINING</h4>
+                <p style="font-family: 'Arial'; font-size: 20px;">Good food. Good mood.</p>
+                <div class="slider-btn">
+                    <a href="/home/book"><button class="btn btn-1">Book Coupon</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img style="width: 100%; height:70vh" src="{% static 'image/img6.jpg' %}" class="d-block w-100" alt="Loading2....">
+            <div class="carousel-caption">
+                <h5 style="font-family: 'Verdana'; font-size: 40px;">Book Your Coupon Now</h5>
+                <p style="font-family: 'Arial'; font-size: 20px;">What are you eating today?</p>
+                <div class="slider-btn">
+                    <a href="book"><button class="btn btn-1">Book Coupon</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img style="width: 100%; height:70vh" src="{% static 'image/img12.jpg' %}" class="d-block w-100" alt="Loading3....">
+            <div class="carousel-caption">
+                <h5 style="font-family: 'Verdana'; font-size: 40px;">Enjoy Healthy and Tasy Meals</h5>
+                <p style="font-family: 'Arial'; font-size: 20px;">Creativity is always on our menu</p>
+                <div class="slider-btn">
+                    <a href="book"><button class="btn btn-1">Book Coupon</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<main>
+    <section class="notcard">
+        <hr class="notice">
+        <div class="news">
+            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"
+                     scrollamount="7" style="color:black;"> <span class="glyphicon glyphicon-chevron-right"></span>
+                Upcoming Events: Weekend Special Meal, 7 April, 2023
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                Iftar Mahfil, 15 April, 2023
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                May Day Special, 1 May, 2023
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                Weekend Special Meal, 12 May, 2023
+            </marquee>
+        </div>
+        <hr class="notice">
+        <h2 style="text-align: center; font-family: 'Calibri'; font-size: 40px; font-weight: 900">WE OFFER</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 md-margin-bottom-40" style="flex: 33.33%; padding: 20px;">
+                    <div class="card medium">
+                        <div class="card-img">
+                            <img style="width: 100%;height: 300px;" src={% static 'image/snack.jpg' %} alt="snacks">
+                            <span class="card-title">Snacks</span>
+                        </div>
+                        <div class="card-content">
+                            <p>It's a light meal for breakfast and evening and students can buy at any time. The snacks can be packed for to go or for dining in.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 md-margin-bottom-40" style="flex: 33.33%; padding: 20px;">
+                    <div class="card medium">
+                        <div class="card-img">
+                            <img style="width: 100%;height: 300px;" src={% static 'image/meal.jpg' %} alt="regular">
+                            <span class="card-title">Regular Meal</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Everyday meals are prepared with fresh ingredients and maintains high nutrition for students. The traditional food is served for daily meals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 md-margin-bottom-40" style="flex: 33.33%; padding: 20px;">
+                    <div class="card medium">
+                        <div class="card-img">
+                            <img style="width: 100%;height: 300px;" src={% static 'image/feastt.jpg' %} alt="feast">
+                            <span class="card-title">Special Meal</span>
+                        </div>
+                        <div class="card-content">
+                            <p>A surprise meal is arranged weekly for refreshment to break the monotonous daily menu. The menu varies from traditional dishes to fast foods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- --------------About Us--------------  -->
+<section class="section-padding gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center">
+                    <h2>ABOUT
+                        <span style="color: #81BD3A">US</span>
+                    </h2>
+                    <p style="color: #2d2d2d;">
+                        We bring you the delicious, healthy and comfort meals with fresh ingredients for an amazing dining experience.
+                    </p>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="about-text">
+                    <p style="color: #2d2d2d;">
+                        The students of these universities can eat 
+                        their meal from hall and also outside. But the outside meals are unhygienic and costly, so they 
+                        prefer to eat from hall. Sometimes they unable to collect their coupon in exact time because they 
+                        have classes, or some other problem like weekend. For this they suffer a lot to collect their coupon.<br><br>
+                        Student can book coupon both online and offline. For online booking, student
+                        must create an account. Using this account, they can view menu and then book coupon. They can 
+                        also view the upcoming events in this system. Students can also cancel their coupon in due time 
+                        both online and offline. In this system, students can pay the coupon bill by any online systems like 
+                        Bkash, Nagad, Rocket. Any student can pay bill in person during office hours. After completing 
+                        payment, they will get a confirmation mail and then can download the coupon.<br><br></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="about-image">
+                    <img src="{% static 'image/aboutpic.png' %}" alt="About us Image" style="width: 100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div>
+    <hr class="notice">
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white"
+    >
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h5 style="font-size: 20px">Eat<span style="font-family: 'Lucida Calligraphy'; color: #81BD3A">&</span>Chill</h5>
+                        <p>
+                            Our hall dining serves fresh and healthy food for students everyday. Contact with us for any help or information. Let us know about how we can improve our service.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-6">
+                        <h5 class="text-uppercase fw-bold"><span class="glyphicon glyphicon-link"></span>  Useful links</h5>
+                        <a class="footerlink" href="/home/book/coupon">
+                            <p>Download Coupon</p>
+                        </a>
+                        <a class="footerlink" href="/home/book/coupon">
+                        <p>
+                            Download Feast coupon
+                        </p>
+                        </a>
+                        <a class="footerlink" href="/home/help">
+                        <p>
+                            Help
+                        </p> </a>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h5 class="text-uppercase fw-bold"><span class="glyphicon glyphicon-earphone"></span>  Contact</h5>
+                        <p>Hall Provost: akmprovost@gmail.com</p>
+                        <p>Dining Manager: +8801922576367</p>
+                        <p>Hall Staff: +8801834772312</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            © 2020 Copyright: Jahangirnagar University. All right reserved.
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="" width=device-width, inital-scale="1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>Snacks</title>
+    <style>
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        #wrapper {
+            padding-left: 100px;
+            padding-top: 80px;
+            height: 30%;
+            width: 600px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        p {
+            /* color: #5F6F94; */
+            font-family: Bahnschrift;
+            font-size: 16px;
+            word-spacing: 3px;
+        }
+
+        marquee {
+            font-size: large;
+
+        }
+
+        hr.notice {
+            border-top: 2px solid black;
+            margin: 1em;
+        }
+
+        h3 {
+            padding: 30px;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+
+        /* Clear floats after image containers */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 33.33%;
+            padding: 20px;
+
+        }
+
+        .navbar-brand {
+            font-family: 'Abel';
+            font-size: 30px;
+            color: cornsilk;
+        }
+
+        /* newwww*/
+        .navbar {
+            margin-bottom: 0px !important;
+        }
+
+
+        /*new    */
+        footer {
+            background-color: #2C3639;
+        }
+
+        .service {
+            position: relative;
+            padding-right: 100px;
+            top: -380px;
+        }
+
+
+        /* -----------New Updates Here------------- */
+
+        body {
+            background-color: #8bc34a;
+        }
+
+        .carousel-caption {
+            bottom: 50px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        .carousel-item::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: #000;
+            opacity: 0.7;
+        }
+
+        .slider-btn {
+            margin-top: 20px;
+        }
+
+        .slider-btn .btn {
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50px;
+            padding: 1.5rem 2rem;
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .slider-btn .btn:hover {
+            color: #ff7a59;
+            border: #ff7a59 solid 1px;
+            background: #fff;
+        }
+
+        /* Card */
+        .card-title {
+            color: #2d2d2d;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 13px;
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #fff;
+            width: 100%;
+            border-bottom: 4px solid #8bc34a;
+        }
+
+        .card-img {
+            position: relative;
+            max-height: 60%;
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 13px;
+            border-radius: 0 0 2px 2px;
+            max-height: 100%;
+        }
+
+        .card-content p {
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .card.medium {
+            position: relative;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        th,
+        td {
+            /* border: 1px solid black; */
+
+            border-bottom: 2px solid #ddd;
+            padding: 20px;
+        }
+
+        th {
+            color: darkgreen;
+            font-size: large;
+        }
+
+        .trow {
+            font-size: medium;
+        }
+        .trow:hover {
+            background-color: #77b432;
+        }
+
+        /* Card end */
+        /* Footer */
+        .footerlink {
+            color: white;
+        }
+
+        .footerlink:hover {
+            color: #56ab2f;
+        }
+
+        /* New updates ends here */
+    </style>
+
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home">Eat<span
+                    style="font-family: 'Lucida Calligraphy'; color: #81BD3A">&</span>Chill</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home"><span class="glyphicon glyphicon-home"></span> Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Menu</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/home/Breakfast">Breakfast</a></li>
+                            <li><a class="dropdown-item" href="/home/Lunch">Lunch</a></li>
+                            <li><a class="dropdown-item" href="/home/Snacks">Snacks</a></li>
+                            <li><a class="dropdown-item" href="/home/Dinner">Dinner</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/events">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/notice">Notice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/about">About</a>
+                    </li>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="d-flex align-items-center flex-column">
+            <h1 class="text-center" style="color:#915c00"><img src="{% static 'image/dinn.png' %}" alt="icon"
+                style="width: 50px; height: 50px;"> Snacks Menu</h1>
+        <table class="center">
+            {% if snacksobj %}
+            <tr>
+                <th>Dish Name</th>
+                <th>Price</th>
+            </tr>
+            {% for sn in snacksobj %}
+            <tr class="trow">
+                <td>{{sn.snacks_name}}</td>
+                <td>{{sn.snacks_price}} tk</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <h2>Empty database</h2>
+            {% endif %}
+        </table>
+        <div class="slider-btn">
+            <a href="/home/book"><button class="btn btn-1">Book Coupon</button></a>
+        </div>
+        </div>
+    </main>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Footer -->
+    <div>
+        <hr class="notice">
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-white">
+
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h5 style="font-size: 20px">Eat<span
+                                    style="font-family: 'Lucida Calligraphy'; color: #81BD3A">&</span>Chill</h5>
+                            <p>
+                                Our hall dining serves fresh and healthy food for students everyday. Contact with us for
+                                any help or information. Let us know about how we can improve our service.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-6">
+                            <h5 class="text-uppercase fw-bold"><span class="glyphicon glyphicon-link"></span> Useful
+                                links</h5>
+                                <a class="footerlink" href="/home/book/coupon">
+                                    <p>Download Coupon</p>
+                                </a>
+                                <a class="footerlink" href="/home/book/coupon">
+                                <p>
+                                    Download Feast coupon
+                                </p>
+                                </a>
+                                <a class="footerlink" href="/home/help">
+                                <p>
+                                    Help
+                                </p> </a>
+                            </div>
+                            <!-- Grid column -->
+        
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <h5 class="text-uppercase fw-bold"><span class="glyphicon glyphicon-earphone"></span>  Contact</h5>
+                                <p>Hall Provost: akmprovost@gmail.com</p>
+                                <p>Dining Manager: +8801922576367</p>
+                                <p>Hall Staff: +8801834772312</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3">
+                © 2020 Copyright: Jahangirnagar University. All right reserved.
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+    </div>
+
+</body>
+
+</html>
